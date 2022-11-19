@@ -1,0 +1,50 @@
+.tour-container{
+    text-align: center;
+    margin: 2rem 0;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    
+    & .tour-card{
+        transition:all 0.4s linear; 
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        & img{
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+            border-top-right-radius: .25rem;
+            border-top-left-radius: .25rem;
+        }
+
+
+        & footer{
+            padding: 1.5rem 2rem;
+            
+    
+            & .tour-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1.5rem;
+                
+        
+               & .tour-price{
+                color: hsl(205, 78%, 60%);
+                background-color: #EBF7FF;
+                padding:5px;
+                border-radius: .25rem;
+               }
+              }
+        }
+
+    }
+
+    & .tour-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+   
+
+    
+
+   
+}
