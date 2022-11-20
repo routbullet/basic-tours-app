@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import Loading from "./components/Loading";
 import Tours from "./components/Tours";
+import "./App.css";
 
 const URL = process.env.REACT_APP_BASE_URL;
 
 function App() {
   const [loading, setLoading] = useState(false);
   const [tours, setTours] = useState([]);
+
+  const removeCardId = (id) => {
+    let updatedTours = tours.filter((tour) => tour.id != id);
+    setTours(updatedTours);
+  };
 
   useEffect(() => {
     fetchAPI();
@@ -35,9 +41,20 @@ function App() {
       </main>
     );
   }
+
+  if (tours.length === 0) {
+    return (
+      <main className="no-length-title">
+        <h2>Sorry, there is no tours left..</h2>
+        <button className="refresh-button" onClick={() => fetchAPI()}>
+          Refresh
+        </button>
+      </main>
+    );
+  }
   return (
     <main>
-      <Tours toursProp={tours} />
+      <Tours toursProp={tours} removeCardId={removeCardId} />
     </main>
   );
 }

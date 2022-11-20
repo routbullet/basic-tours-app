@@ -1,24 +1,21 @@
 .tour-container{
     text-align: center;
     margin: 2rem 0;
-    padding-left: 20rem;
-    padding-right: 20rem;
-    
-    & .tour-card{
-        transition:all 0.4s linear; 
-
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         & img{
             width: 100%;
             height: 20rem;
             object-fit: cover;
             border-top-right-radius: .25rem;
             border-top-left-radius: .25rem;
+          
         }
 
 
         & footer{
+            background-color: #a7cee8;
             padding: 1.5rem 2rem;
+           
             
     
             & .tour-info {
@@ -30,21 +27,35 @@
         
                & .tour-price{
                 color: hsl(205, 78%, 60%);
-                background-color: #EBF7FF;
+                background-color: #add1e9;
+                border: .15rem solid hsl(205, 78%, 60%);
                 padding:5px;
                 border-radius: .25rem;
                }
               }
+
+              & p .truncate-button{
+                color: hsl(205, 78%, 60%);
+                background-color: #add1e9;
+                font-weight: 800;
+                border: .15rem solid hsl(205, 78%, 60%);
+                border-radius: .25rem;
+
+              }
+
+              & .detached-btn{
+                color: hsl(0, 100%, 74%);
+                font-weight: 800;
+                background-color: hsl(0, 100%, 89%);
+                border: .15rem solid hsl(0, 94%, 66%);
+                border-radius: .25rem;
+                padding: .3rem;
+              }
         }
 
-    }
 
-    & .tour-card:hover {
+    &:hover {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
-   
-
-    
-
    
 }

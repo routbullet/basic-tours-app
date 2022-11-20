@@ -2,7 +2,7 @@ import React from "react";
 import Tour from "./Tour";
 import "./sass/Tours.style.scss";
 
-const Tours = ({ toursProp }) => {
+const Tours = ({ toursProp, removeCardId }) => {
   return (
     <section>
       <div className="title">
@@ -11,7 +11,9 @@ const Tours = ({ toursProp }) => {
       </div>
       <div>
         {toursProp.map((tour) => {
-          return <Tour key={tour.id} {...tour}></Tour>;
+          return (
+            <Tour key={tour.id} {...tour} removeCardId={removeCardId}></Tour>
+          );
         })}
       </div>
     </section>

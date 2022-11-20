@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./sass/Tour.style.scss";
 
-const Tour = ({ id, image, info, price, name }) => {
+const Tour = ({ id, image, info, price, name, removeCardId }) => {
   const [readMe, setReadMe] = useState(false);
   return (
     <article className="tour-container">
@@ -14,11 +14,16 @@ const Tour = ({ id, image, info, price, name }) => {
           </div>
           <p>
             {readMe ? info : `${info.substring(0, 180)}...`}
-            <button onClick={() => setReadMe(!readMe)}>
+            <button
+              className="truncate-button"
+              onClick={() => setReadMe(!readMe)}
+            >
               {readMe ? "hide" : "show"}
             </button>
           </p>
-          <button className="detached-btn">Detached</button>
+          <button className="detached-btn" onClick={() => removeCardId(id)}>
+            Detached
+          </button>
         </footer>
       </div>
     </article>
